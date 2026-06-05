@@ -1,0 +1,74 @@
+.page {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.page::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(var(--accent-rgb),0.06) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%; max-width: 420px;
+  animation: scaleIn 0.4s var(--transition) both;
+  position: relative;
+}
+.brand { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.logo {
+  width: 36px; height: 36px;
+  background: var(--accent);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 16px; color: #080808;
+}
+.wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.5px; }
+.sub { color: var(--text2); font-size: 13px; margin-bottom: 28px; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 12px; font-weight: 500; color: var(--text2); letter-spacing: 0.3px; }
+.error {
+  color: var(--red); font-size: 12px;
+  background: rgba(255,95,87,0.08);
+  border: 1px solid rgba(255,95,87,0.2);
+  padding: 10px 14px; border-radius: 8px;
+}
+.submit {
+  background: var(--accent);
+  color: #080808;
+  padding: 13px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: -0.2px;
+  transition: all 0.2s var(--transition);
+  margin-top: 4px;
+}
+.submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(var(--accent-rgb),0.3); }
+.submit:disabled { opacity: 0.4; cursor: not-allowed; }
+.note {
+  font-size: 11px; color: var(--text3);
+  text-align: center; margin-top: 12px;
+  background: rgba(var(--accent-rgb),0.05);
+  border: 1px solid rgba(var(--accent-rgb),0.1);
+  padding: 8px 12px; border-radius: 8px;
+}
+.toggle { color: var(--text2); font-size: 13px; text-align: center; margin-top: 24px; }
+.toggle button { color: var(--accent); font-size: 13px; font-weight: 600; transition: opacity 0.15s; }
+.toggle button:hover { opacity: 0.8; }
+.divider { display: flex; align-items: center; gap: 12px; margin: 4px 0; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.divider span { color: var(--text3); font-size: 11px; }
